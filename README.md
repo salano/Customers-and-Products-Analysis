@@ -36,7 +36,8 @@ Year over Year order counts
 Overall Revenue by Brand
 ![Alt text](Revenue_by_brand.png)
 <br />
-**Revenue Growth and Peak Performance **
+
+**Revenue Growth and Peak Performance**
 &nbsp;&nbsp;&nbsp;&nbsp;- 2022 was the strongest year with revenue of 28.5M, with revenue fluctuating throughtout the years.
 &nbsp;&nbsp;&nbsp;&nbsp;- In 2002, QuaPure, ChefChoice, PeakPerformance and SoundWave were our key revenue drivers with revenue of ~ $3.2M, $3.1M, $3M and $3M respectively.
 &nbsp;&nbsp;&nbsp;&nbsp;- ChefChoice is our all-time best performing brand with revenue totalling $57.4M - 2015 was another good year with revenue totalling $28.3M
@@ -54,18 +55,14 @@ Revenue by Brand (2013-2014)
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;- Total order dropped by 8% between 2013 to 2014 - While 2002, 2009, 2015 have approximately the same amount of total orders, the annual revenue is not the same which would indicated that order values were higher in 2002 than in the other years.
 
-    **Recommendation**
-        - Thoroughly investigate causes of 2014 decline (eg. competition, market changes, internal, other factors )
-        - Leverage high performing years to refine marketing and sale strategies
-        - Reasses strategies for coming years focusing on promotions, pricing and customer engagements
+**Recommendation** - Thoroughly investigate causes of 2014 decline (eg. competition, market changes, internal, other factors ) - Leverage high performing years to refine marketing and sale strategies - Reasses strategies for coming years focusing on promotions, pricing and customer engagements
 
-    **Product Segment and Country performance **
-        -  Every country contributes less than 1% of revenue;however, Tonga and Turkey contibution is less than 0.3%
-        - The low performing product segment revenue is less than half of the other two segments, but has the most customers purchases which would indicate most customers buy the cheaper products.
+**Product Segment and Country performance** - Every country contributes less than 1% of revenue;however, Tonga and Turkey contibution is less than 0.3% - The low performing product segment revenue is less than half of the other two segments, but has the most customers purchases which would indicate most customers buy the cheaper products.
 
 Dataset Structure and ERD (Entity Relation Diagram)
 ![Alt text](ERD.png)
 <br />
+
 **Customers Segments**
 customers were segmented as follows to assist with analysis:
 &nbsp;&nbsp;&nbsp;&nbsp; - lifespan in months >=12 and total revenue greater than $10,000 then 'Loyal Customer'
