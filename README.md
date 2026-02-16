@@ -47,14 +47,13 @@ Overall Revenue by Brand
 Revenue by Brand (2013-2014)
 ![Alt text](brand_revenue_2013_2014.png)
 <br />
-**Decline in 2014**
+**Decline in 2014**<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Revenue decline in 2014, but not significantly.<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Between the period Jan 1, 2013 to Jan 1, 2015, StyleCo revenue dropped from approimately $3.7M to $2.5M (~48%), UrbanStyle dropped from $3.1M to $2.6M (~19%), TechGear dropped from $3M to $2.2M (~36%), HomeComfort dropped from ~2.6M to 2M (~30%)
 <br />
 
 **Order Count**<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Order counts follow revenue. Like revenue, orders fluctuates during the period with no major dips with the lowest total orders of 9.6M in 2014<br />
-&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;- Total order dropped by 8% between 2013 to 2014 - While 2002, 2009, 2015 have approximately the same amount of total orders, the annual revenue is not the same which would indicated that order values were higher in 2002 than in the other years.<br />
 
 **Recommendation** <br />
@@ -70,25 +69,25 @@ Dataset Structure and ERD (Entity Relation Diagram)
 <br />
 
 **Customers Segments**<br />
-customers were segmented as follows to assist with analysis:
+customers were segmented as follows to assist with analysis:<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - lifespan in months >=12 and total revenue greater than $10,000 then 'Loyal Customer'<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - lifespan in months >=12 and total revenue less than $10,000 then 'regular Customer'<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - lifespan in months < 12 'New Customer'<br />
 
-customers were segmented as follows to assist with RFM (Recency, Frequency, Monetary) analysis:
+customers were segmented as follows to assist with RFM (Recency, Frequency, Monetary) analysis:<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Recency - days since last purchase<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Frequency - total orders placed<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Monetary - total spend<br />
 
 Each customer were place in one of 5 groups based on the the recency, fequency and their total spend. 1 being the lowest and 5 the highest.
-The customers were then segmented as follows:
+The customers were then segmented as follows:<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Frequency: 5, Recency: 5, Monetary 5: - VIP<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Frequency: 4, Recency: 4 - Loyal<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Frequency: 1, Recency: 5, - New<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Recency < 2 - At-risk<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Anything else - Other<br />
 
-For churn analysis the customers were segmented as follows:
+For churn analysis the customers were segmented as follows:<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Frequency > 4, Recency > 4, Monetary 5: - VIP<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Frequency >= 4, Recency < =2 - At-risk Giants<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Frequency <= 2, Recency >=4 , - Promising new customer<br />
@@ -106,9 +105,8 @@ We calculated the risk as follows:
 &nbsp;&nbsp;&nbsp;&nbsp; - Score > 3.0: High probability of churn (lapsed).<br />
 
 **<b>Summary </b>**<br />
-Revenue by Product segment
+Customer Revenue by Product segment
 ![Alt text](customer_revenue_by_segment_basic.png)
-
 Revenue by Product segment
 ![Alt text](top_revenue_by_segment.png)
 
@@ -127,7 +125,7 @@ Customer migration
 Customer order prediction
 ![Alt text](customer_migration.png)
 
-Customer chur prediction
+Customer churn prediction
 ![Alt text](customer_churn_01.png)
 ![Alt text](customer_churn_02.png)
 <br />
