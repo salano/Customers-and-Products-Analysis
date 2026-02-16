@@ -36,7 +36,6 @@ Year over Year order Brand Revenue
 
 Year over Year order counts
 ![Alt text](revenue_by_year_brand.png)
-<br />
 
 Overall Revenue by Brand
 ![Alt text](Revenue_by_brand.png)
