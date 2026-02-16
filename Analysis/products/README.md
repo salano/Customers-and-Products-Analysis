@@ -384,4 +384,5 @@ ORDER BY total_revenue DESC;
 
 ```
 ![Alt text](country_part_to_whole.png)
+
 ```
