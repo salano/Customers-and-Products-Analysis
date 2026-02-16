@@ -86,7 +86,7 @@ product_aggregation
 
 ```
 ![Alt text](product_metrics.png)
-
+<--
 <h3> Performance Analysis (Year-over-Year) </h3>
 <h4> Purpose: </h4>
     - To measure the performance of brands over time.
@@ -384,7 +384,7 @@ ORDER BY total_revenue DESC;
 
 ```
 ![Alt text](country_part_to_whole.png)
-<--
+
 ```
 
 -->
