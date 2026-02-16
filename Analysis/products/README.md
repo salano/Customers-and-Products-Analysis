@@ -88,7 +88,6 @@ product_aggregation
 ```
 
 ![Alt text](product_metrics.png)
-<--
 
 <h3> Performance Analysis (Year-over-Year) </h3>
 <h4> Purpose: </h4>
@@ -232,6 +231,7 @@ GROUP BY DATE_TRUNC('year', of.LastEditedWhen)
 ![Alt text](cumulative_revenue.png)
 
 <h3>Cumulative Revenue by Brand</h3>
+
 ```
 
 create or replace view gold.cum_rev_by_brand AS
@@ -261,6 +261,7 @@ where order_date < to_date('2025-01-01')
 order by brand, order_date
 
 ```
+
 ![Alt text](cum_rev_brand.png)
 
 <h3>Cumulative Revenue by Country and Brand</h3>
@@ -298,6 +299,7 @@ where order_date < to_date('2025-01-01')
 order by brand, order_date
 
 ```
+
 ![Alt text](cum_rev_country_brand.png)
 
 <h3>Cumulative Revenue by Country</h3>
@@ -331,6 +333,7 @@ where order_date < to_date('2025-01-01')
 order by Country, order_date
 
 ```
+
 ![Alt text](cum_rev_country.png)
 
 <h3> Part-to-Whole Analysis </h3>
@@ -362,6 +365,7 @@ FROM brand_revenue
 ORDER BY total_revenue DESC;
 
 ```
+
 ![Alt text](brand_part_to_whole.png)
 
 <h3> Country Part to Whole </h3>
@@ -389,8 +393,5 @@ FROM country_revenue
 ORDER BY total_revenue DESC;
 
 ```
+
 ![Alt text](country_part_to_whole.png)
-
-```
-
--->
