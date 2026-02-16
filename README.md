@@ -29,12 +29,15 @@ Products were segmented as follows to assist with analysis:<br />
 Year over Year Revenue
 ![Alt text](revenue_YOY.png)
 <br />
+
 Year over Year order Brand Revenue
 ![Alt text](order_count_YOY.png)
 <br />
+
 Year over Year order counts
 ![Alt text](revenue_by_year_brand.png)
 <br />
+
 Overall Revenue by Brand
 ![Alt text](Revenue_by_brand.png)
 <br />
