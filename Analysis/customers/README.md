@@ -1,13 +1,14 @@
 In this section we analyse the customers behavior to detect any potential slippage and to develop targeted retention strategies.
 
 <h3> Identify top 10 customers by revenue </h3>
+
 ```
 -- Find the top 10 customers who have generated the highest revenue
 create or replace view gold.top_10_customers as
 select *
 from
 (
-  SELECT 
+  SELECT
       customer_skey,
       c.CustomerID,
       concat(c.CustomerFirstName,' ',c.CustomerLastName) as customer_name,
@@ -16,16 +17,18 @@ from
   FROM gold.orders_fact of
   LEFT JOIN gold.customers c
       ON c.CustomerID = of.CustomerID
-  GROUP BY 
+  GROUP BY
       customer_skey,
       c.CustomerID,
-      concat(c.CustomerFirstName,' ',c.CustomerLastName) 
+      concat(c.CustomerFirstName,' ',c.CustomerLastName)
   ORDER BY total_revenue DESC
 )
-where 
+where
   rank_customer <= 10
-  
+
 ```
+
+<--
 ![Alt text](top_10_customers.png)
 
 <h3> Part-to-Whole Analysis </h3>
@@ -440,3 +443,5 @@ ORDER BY 1, 2;
 ```
 
 ![Alt text](RMF_churn_report.png)
+
+-->
