@@ -1,4 +1,4 @@
-In this section we analyze products performance and customers behaviour to identify trends and patterns which will enable us develop marketing and operations strategies in a contempory business environment.
+In this section, we analyze product performance and customer behaviour to identify trends and patterns that will enable us to develop marketing and operations strategies in a contemporary business environment.
 
 **Metrics**
 Revenue Trends - Orders revenue, number of orders, and Average order Value (AVO) <br />
@@ -31,7 +31,7 @@ Overall Revenue by Brand
 
 **Revenue Growth and Peak Performance**<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- 2022 was the strongest year with revenue of 28.5M, with revenue fluctuating throughtout the years.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- In 2002, QuaPure, ChefChoice, PeakPerformance and SoundWave were our key revenue drivers with revenue of ~ $3.2M, $3.1M, $3M and $3M respectively.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;- In 2002, QuaPure, ChefChoice, PeakPerformance and SoundWave were our key revenue drivers with revenue of $3.2M, $3.1M, $3M and $3M respectively.<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- ChefChoice is our all-time best performing brand with revenue totalling $57.4M - 2015 was another good year with revenue totalling $28.3M<br />
 
 Revenue by Brand (2013-2014)

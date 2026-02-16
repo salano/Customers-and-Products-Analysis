@@ -1,17 +1,16 @@
-This project uses segmentation, migration, and part-to-whole analysis to understand the drivers of revenue and predict customer churn at the **MNO** retailer store. It identifies behavorial and demographical features that influences whether a customer is likely to churn, and support organizations
+This project uses segmentation, migration, and part-to-whole analysis to understand the drivers of revenue and predict customer churn at the **MNO** retailer store. It identifies behavioral and demographical features that influence whether a customer is likely to churn, and supports organizations
 in developing targeted retention strategies.
 
-Tools: Pyspark, datatables, SQL, Power BI
+Tools: Pyspark, datatables, SQL, and Power BI
 SQL script can be found in the scripts section.
 Pyspark code in the ETL section
 
-**MNO** is a general e-commerce company selling a variety of goods and accessories to global clients. Established in 2000,and has expanded in the last few years. With a constant growth in the e-commerce space, it is encountering increasing competition from peer companies.
+**MNO** is a general e-commerce company selling a variety of goods and accessories to global clients. Established in 2000, it has expanded in the last few years. With a constant growth in the e-commerce space, it is encountering increasing competition from peer companies.
 
 **MNO** has 10000 customers, thousand of transactions, and revenue amounting to over half a billion dollars. The e-commerce data span, various dimensions and metrics
 including, country, revenue, revenue by brand, revenue by country, and customer segmentation.
 
-Upon the request of the operation head, an in-depth analysis was conducted over the past several year (2000-2018). This review provides valuable insights which can
-can be utilized by internal cross-functional teams to streamline performance to meet the organization goals.
+Upon the request of the operation head, an in-depth analysis was conducted over the past several years (2000-2018). This review provides valuable insights that can be utilized by internal cross-functional teams to streamline performance to meet the organization's goals.
 
 **Metrics**
 Revenue Trends - Orders revenue, number of orders, and Average order Value (AVO) <br />
