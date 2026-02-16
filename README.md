@@ -109,8 +109,10 @@ We calculated the risk as follows:
 &nbsp;&nbsp;&nbsp;&nbsp; - Score > 3.0: High probability of churn (lapsed).<br />
 
 **<b>Summary </b>**<br />
+
 Customer Revenue by Product segment
 ![Alt text](customer_revenue_by_segment_basic.png)
+
 Revenue by Product segment
 ![Alt text](top_revenue_by_segment.png)
 
