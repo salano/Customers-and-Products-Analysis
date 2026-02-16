@@ -60,6 +60,10 @@ Revenue by Brand (2013-2014)
 -&nbsp;&nbsp;&nbsp;&nbsp; Thoroughly investigate causes of 2014 decline (eg. competition, market changes, internal, other factors ) <br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Leverage high performing years to refine marketing and sale strategies - Reasses strategies for coming years focusing on promotions, pricing and customer engagements <br />
 
+Revenue by Country
+![Alt text](revenue_by_country_01.png)
+![Alt text](revenue_by_country_02.png)
+
 **Product Segment and Country performance**<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Every country contributes less than 1% of revenue;however, Tonga and Turkey contibution is less than 0.3%<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- The low performing product segment revenue is less than half of the other two segments, but has the most customers purchases which would indicate most customers buy the cheaper products.<br />
@@ -123,7 +127,7 @@ Customer migration
 ![Alt text](customer_migration.png)
 
 Customer order prediction
-![Alt text](customer_migration.png)
+![Alt text](customer_predicted_purchase.png)
 
 Customer churn prediction
 ![Alt text](customer_churn_01.png)
