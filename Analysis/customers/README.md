@@ -2,7 +2,6 @@ In this section we analyse the customers behavior to detect any potential slippa
 
 <h3> Identify top 10 customers by revenue </h3>
 ```
-%sql
 -- Find the top 10 customers who have generated the highest revenue
 create or replace view gold.top_10_customers as
 select *
@@ -25,6 +24,7 @@ from
 )
 where 
   rank_customer <= 10
+  
 ```
 ![Alt text](top_10_customers.png)
 
