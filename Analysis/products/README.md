@@ -3,6 +3,7 @@ In this section we analyse the product performance to understand revenue growth 
 <h3> Product Metrics</h3>
 <h4>Purpose: </h4>
     - Identify key performance Indicators
+
 ```
 create or replace view gold.product_metrics as
 with base_query as (
@@ -20,8 +21,8 @@ with base_query as (
     p.ProductName,
     p.Brand
   from
-    gold.orders_fact of 
-    left join gold.products p 
+    gold.orders_fact of
+    left join gold.products p
     on of.ProductID = p.ProductID
   where
     p.active_flg = 1
@@ -44,9 +45,9 @@ product_aggregation as (
       min(LastEditedWhen) as first_order_date,
       date_diff(MONTH, min(LastEditedWhen), max(LastEditedWhen)) as life_span,
       round(avg(UnitPrice), 2) average_price
-  from 
+  from
     base_query
-  group by 
+  group by
     ProductID,
     ProductName,
     Brand,
@@ -85,8 +86,10 @@ from
 product_aggregation
 
 ```
+
 ![Alt text](product_metrics.png)
 <--
+
 <h3> Performance Analysis (Year-over-Year) </h3>
 <h4> Purpose: </h4>
     - To measure the performance of brands over time.
@@ -135,6 +138,7 @@ where order_year < 2025
 ORDER BY Brand, order_year;
 
 ```
+
 ![Alt text](YOY_brand_revenue.png)
 
 <h3> Ranking Analysis <h3>
@@ -164,6 +168,7 @@ GROUP BY p.Brand
 WHERE rank_brands <= 5;
 
 ```
+
 ![Alt text](top_5_brands.png)
 
 <h3> Change Over Time Analysis </h3>
@@ -189,6 +194,7 @@ GROUP BY DATE_TRUNC('month', LastEditedWhen)
 ORDER BY DATE_TRUNC('month', LastEditedWhen);
 
 ```
+
 ![Alt text](revenue_by_month.png)
 
 <h3> Cumulative Analysis </h3>
@@ -197,8 +203,7 @@ ORDER BY DATE_TRUNC('month', LastEditedWhen);
     - To track performance over time cumulatively.
     - Useful for growth analysis or identifying long-term trends.
 
-SQL Functions Used:
-    - Window Functions: SUM() OVER(), AVG() OVER()
+SQL Functions Used: - Window Functions: SUM() OVER(), AVG() OVER()
 
 ```
 
@@ -223,6 +228,7 @@ GROUP BY DATE_TRUNC('year', of.LastEditedWhen)
 ) t
 
 ```
+
 ![Alt text](cumulative_revenue.png)
 
 <h3>Cumulative Revenue by Brand</h3>
