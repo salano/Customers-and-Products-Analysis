@@ -14,6 +14,7 @@ table_full_name = f"{output_schema_name}.{output_table_name}"
 landing_table_full_name = "bronze.customers"
 log_schema_name = "log"
 log_table_name = 'table_logs'
+
 ```
 
 Get max date to process only new or changed data in this stage
@@ -42,12 +43,15 @@ df_ld = spark.read.table(landing_table_full_name).where(f"record_creation_date >
 print("SPARK_APP: Landing Data Count - " + str(df_ld.count()))
 print("SPARK_APP: Printing Landing Schema --")
 df_ld.printSchema()
+
 ```
 
 Key imports
 
 ```
+
 from pyspark.sql.functions import current_timestamp, expr, to_timestamp
+
 ```
 
 Remove any duplicates
@@ -57,12 +61,14 @@ Remove any duplicates
 df_dedupe = df_ld.withColumn("_rnk", expr(f"row_number() over (partition by CustomerID order by record_creation_date desc)")).where("_rnk = 1").drop("_rnk")
 
 print("SPARK_APP: Landing Data Count after de-dupe - " + str(df_dedupe.count()))
+
 ```
 
 Install Great Expectations (Ideally this should be installed in a shared environment used by all notebooks)
 
 ```
 %pip install --q great_expectations
+
 ```
 
 Implement functions for data validation, saving to tables, archiving files, creating logs, handling validation success and failures. (ideally these should be in a module or package to share across notebooks)
@@ -237,6 +243,7 @@ validated = validate_silver_with_gx(
     column_value_to_be_between =  ['ValidFrom'],
     column_value_to_match = ['Email']
 )
+
 ```
 
 Validation results
@@ -245,11 +252,13 @@ Validation results
 Add audit and SCD type 2 columns
 
 ```
+
 # Add audit columns
 df_stg = df_dedupe.withColumns({"effective_start_dt": current_timestamp(), "effective_end_dt": to_timestamp(lit("2100-12-31 00:00:00.000000")),"active_flg": lit(1), "insert_dt": current_timestamp(), "update_dt": current_timestamp() }) \
     .drop("record_creation_date").drop("ValidFrom").drop("ValidTo")
 
 df_stg.printSchema()
+
 ```
 
 If data is validated, save data to table and create a success log in log table, otherwise create a failure log in log table
@@ -271,6 +280,7 @@ if validated:
 
 else:
     handle_failure(output_table_name, output_schema_name, log_schema_name, log_table_name)
+
 ```
 
 Log output

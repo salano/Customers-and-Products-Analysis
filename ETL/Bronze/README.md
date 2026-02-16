@@ -7,6 +7,7 @@ The implementation steps are as follows:
 Variables setup
 
 ```
+
 #Variables for filepath and tablename
 file_path_to_be_validated = '/Volumes/workspace/bronze/raw_files/customers/landing/customers.csv'
 output_table_name = 'customers'
@@ -16,12 +17,14 @@ log_bad_table_name = 'bad_records'
 log_table_schema = 'log'
 
 archive_path  = '/Volumes/workspace/bronze/raw_files/customers/archive/'
+
 ```
 
 Install Great Expectations (Ideally this should be installed in a shared environment used by all notebooks)
 
 ```
 %pip install --q great_expectations
+
 ```
 
 Implement functions for schema validation, saving to tables, archiving files, creating logs, handling validation success and failures. (ideally these should be in a module or package to share across notebooks)
@@ -200,6 +203,7 @@ def log_corrupted_records(df_name, schema, table_name, log_schema, log_table, ti
 Define schema for validation
 
 ```
+
 # Expect the columns to be from the expected column set
 spark_expected_schema = {
     "CustomerID":         {"size": None, "dtype": "IntegerType",  "unique": True,  "nullable": False},
@@ -283,6 +287,7 @@ expected_rows = customers_df.count()
 
 #
 p_df = p_customers_df.toPandas()
+
 ```
 
 Perform schema validation on dataframe
@@ -299,10 +304,11 @@ validated = validate_schema_with_gx(
     check_ordered_columns=True,
     enable_length_check=False
 )
+
 ```
 
 Validation results
-![Alt text](validation_results.png)
+![Alt text](b_validation_results.png)
 
 Add insert date
 
@@ -311,6 +317,7 @@ Add insert date
 customers_df = customers_df.withColumn("insert_dt", current_timestamp())
 
 customers_df.printSchema()
+
 ```
 
 If schema is validated, save data to table, move source file to archive and create a success log in log table, otherwise create a failure log in log table
@@ -340,6 +347,7 @@ if validated:
 
 else:
     handle_failure(output_table_name, output_table_schema, log_table_schema, log_table_name)
+
 ```
 
 Log output

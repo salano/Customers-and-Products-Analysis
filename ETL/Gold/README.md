@@ -30,28 +30,33 @@ df_stg.printSchema()
 Import key libraries
 
 ```
+
 from pyspark.sql.functions import current_timestamp, col, expr, to_date, date_format, udf, lit, sha2, concat_ws
 from pyspark.sql.types import StringType
 from datetime import datetime
 from delta import DeltaTable
 import uuid
 import pandas as pd
+
 ```
 
 Create logic for surrogate keys and lists of columns for hash keys
 
 ```
+
 # Generated uuid UDF for Surrogate Key
 uuidUDF = udf(lambda : str(uuid.uuid4()),StringType())
 
 #Hash columns for Type 1 and Type 2 SCD
 hash1Col = ['PhoneNumber','FaxNumber','Email'] # List of Type 1 columns
 hash2Col = ['CustomerFirstName','CustomerLastName','Address','City','State','Zip','Country']
+
 ```
 
 Apply surrogate keys and hash columns to dataframe
 
 ```
+
 # Generate SURROGATE KEYs and Hashes and add them to dataframe
 df_dim_temp = df_stg.withColumn("skey", uuidUDF()).withColumn("Hash1", lit(sha2(concat_ws("~", *hash1Col), 256))) \
    .withColumn("Hash2", lit(sha2(concat_ws("~", *hash2Col), 256)))
@@ -59,6 +64,7 @@ df_dim_temp = df_stg.withColumn("skey", uuidUDF()).withColumn("Hash1", lit(sha2(
 print("SPARK_APP: Dim Temp Data Count - " + str(df_dim_temp.count()))
 print("SPARK_APP: Printing Dim Temp Schema --")
 df_dim_temp.printSchema()
+
 ```
 
 %pip install --q great_expectations
@@ -437,7 +443,8 @@ SCD data output
 ![Alt text](gold_customers_added2.png)
 
 
-This process is repeated for the suppliers, products data
+This process is repeated for the suppliers, products
+
 ---
 
 ## Date Dimension Table
@@ -445,6 +452,7 @@ This process is repeated for the suppliers, products data
 ## Create date dimension table in code.
 
 Create table definition
+
 ```
 
 # Create Date Dimension
@@ -496,6 +504,7 @@ output_table_name = "dim_date"
 table_full_name = f"{output_schema_name}.{output_table_name}"
 log_schema_name = "log"
 log_table_name = 'table_logs'
+
 ```
 
 Import libraries
@@ -512,6 +521,7 @@ import calendar
 Implement functions to create list of dates for specified period
 
 ```
+
 def week_of_month(dt):
     """ Returns the week of the month for the specified date.
     """
@@ -583,6 +593,7 @@ def date_data(start_run_dt: str = '20200101', num_years: int = 5) -> list:
 			_next_date.date().replace(month=12, day=31)])# end of year
 
 	return _data
+
 ```
 
 Create schema and list of dates to create dataframe
@@ -590,8 +601,10 @@ Create schema and list of dates to create dataframe
 List contains dates for the 50 years starting from Jan 1, 1980
 
 ```
+
 _cols = ['date','day','Weekday','WeekDayName','IsWeekend','DOWInMonth','DayOfYear','WeekOfMonth','WeekOfYear','month','MonthName','Quarter','QuarterName','year','MMYYYY','MonthYear','FirstDayOfMonth','LastDayOfMonth','FirstDayOfQuarter','LastDayOfQuarter','FirstDayOfYear','LastDayOfYear']
 _data = date_data(rundate, 50)
+
 ```
 
 Create dataframe from schema and list of dates
@@ -601,6 +614,7 @@ Create dataframe from schema and list of dates
 df_raw = spark.createDataFrame(data=_data[1:], schema=_cols)
 print("SPARK_APP: Printing Raw Schema --")
 df_raw.printSchema()
+
 ```
 
 Add date surrogate keys to dataframe
@@ -614,6 +628,7 @@ df_dim_temp = df_raw.withColumn("DateKey", date_format("date", "yyyyMMdd"))
 print("SPARK_APP: Dim Temp Data Count - " + str(df_dim_temp.count()))
 print("SPARK_APP: Printing Dim Temp Schema --")
 df_dim_temp.printSchema()
+
 ```
 
 Add audit columns to dataframe
@@ -623,6 +638,7 @@ from pyspark.sql.functions import current_timestamp, lit
 # Add audit columns
 df_consump = df_dim_temp.withColumn("insert_dt", current_timestamp()).withColumn("rundate", lit(rundate)).withColumn("update_dt", current_timestamp())
 print("SPARK_APP: Added AUDIT column")
+
 ```
 
 Re- organize columns in order of table definition
@@ -656,6 +672,7 @@ consump_dim_df = df_consump.selectExpr("DateKey",
 "cast(update_dt as timestamp) update_dt"
 )
 consump_dim_df.printSchema()
+
 ```
 
 Save dataframe to table
@@ -665,6 +682,7 @@ Save dataframe to table
 consump_dim_df.write.format("delta").mode("overwrite").option("mergeSchema", "true").saveAsTable(table_full_name)
 
 print("SPARK_APP: Data written to consumption layer")
+
 ```
 
 date output
@@ -691,6 +709,7 @@ products_table_full_name = "gold.products"
 date_table_full_name = "gold.dim_date"
 log_schema_name = "log"
 log_table_name = 'table_logs'
+
 ```
 
 Read data from silver layer into dataframe
@@ -702,6 +721,7 @@ df_stg = spark.read.table(stage_table_full_name)
 print("SPARK_APP: Staging Data Count - " + str(df_stg.count()))
 print("SPARK_APP: Printing Staging Schema --")
 df_stg.printSchema()
+
 ```
 
 Import libraries
@@ -713,6 +733,7 @@ from datetime import datetime
 from delta import DeltaTable
 import uuid
 import pandas as pd
+
 ```
 
 Read surrogate keys from customers, products, dates, and suppliers dimension tables
@@ -727,6 +748,7 @@ df_dim_suppliers = spark.read.table(suppliers_table_full_name).where("active_flg
 
 
 df_dim_dates = spark.read.table(date_table_full_name).selectExpr("date", "DateKey as date_skey")
+
 ```
 
 Add surrogate keys to fact dataframe
@@ -734,6 +756,7 @@ Add surrogate keys to fact dataframe
 ```
 # Get SURROGATE KEYs from Dimensions and add to Fact table
 df_fact = df_stg.join(df_dim_products, how="left_outer", on=df_stg.ProductID == df_dim_products.ProductID).join(df_dim_customers, how="left_outer", on=df_stg.CustomerID == df_dim_customers.CustomerID).join(df_dim_suppliers, how="left_outer", on=df_stg.SupplierId == df_dim_suppliers.Supplierid).join(df_dim_dates, how="left_outer", on=df_stg.LastEditedDate == df_dim_dates.date).select(df_dim_dates.date_skey, df_dim_products.product_skey, df_dim_suppliers.supplier_skey, df_dim_customers.customer_skey, df_stg.OrderID, df_stg.ProductID, df_stg.SupplierId, df_stg.CustomerID, df_stg.Quantity, df_stg.UnitPrice, df_stg.TaxRate, df_stg.LastEditedBy, df_stg.LastEditedWhen, df_stg.LastEditedDate, df_stg.effective_start_dt, df_stg.effective_end_dt, df_stg.active_flg,  df_stg.insert_dt, df_stg.update_dt, df_stg.record_creation_date)
+
 ```
 
 Implement functions for data validation, saving to tables, archiving files, creating logs, handling validation success and failures. (ideally these should be in a module or package to share across notebooks)
@@ -934,6 +957,7 @@ panda_expected_schema = {
     "update_dt": {"size": None, "dtype": "datetime64","unique": False, "nullable": False},
     "record_creation_date": {"size": None, "dtype": "datetime64","unique": False, "nullable": True},
 }
+
 ```
 
 Perform schema validation
@@ -954,6 +978,7 @@ validated = validate_gold_with_gx(
     expected_row_count=expected_rows,
     enable_length_check=False
 )
+
 ```
 
 Validation results
@@ -962,6 +987,7 @@ Validation results
 If schema is validated, save data to table, and create a success log in log table, otherwise create a failure log in log table
 
 ```
+
 # Read data from landing based on max timestamp
 if validated:
 
@@ -969,6 +995,7 @@ if validated:
 
 else:
     handle_failure(output_table_name, output_schema_name, log_schema_name, log_table_name)
+
 ```
 
 Output

@@ -7,7 +7,9 @@ This project was implemented on the free version of Databricks so it contains so
 The ETL process will go the the medallion architecture with validation executed at each stage to ensure data quality as the data move through each stages of the pipeline.
 
 The process is illustrated as follows:
+![Alt text](ETL_architecture.png)
 
+**The archictectural layers**<br />
 In the bronze layer:
 
 1. incoming data is checked for corrupted records and the corrupted records are stored separately for inspection and correction.
