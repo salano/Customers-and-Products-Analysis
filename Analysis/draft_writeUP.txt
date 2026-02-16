@@ -1,0 +1,22 @@
+This project uses segmentation, migration, and part-to-whole analysis to understand the drivers of revenue and predict customer churn at 
+MNO retailer store. It identifies behavorial and demographical features that influences whether a customer is likely churn, and support organizations 
+in developing targeted retention strategies. 
+
+MNO is a general e-commerce company selling a variety of goods and accessories to global clients. Established in 2000,and has expanded in the last few years
+With a constant growth in the e-commerce space, it is encountering increasing competition peer companies. 
+
+MNO has 10000 customers, thousand of transactions, and revenue amounting to over half a billion dollars. The e-commerce data span, various dimensions and metrics 
+ including, country, revenue, revenue by brand, revenue by country, and customer segmentation.
+ 
+Upon the request of the operation head, an indepth analysis was conducted over the past several year (2000-2019). This review provides valuable insights which can 
+can be utilized by internal cross-functional teams to streamline performance to meet the organization goals.
+
+
+Metrics
+	Revenue Trends - Orders revenue, number of orders, and Average order Value (AVO) 
+	Product Performance - analyze product and brand lines
+	Customer behaviour - analyze customers across segments
+	Regional results -  evaluate regional demand and product performance to identify areas for improvement
+
+
+Caveats and Assumptions
