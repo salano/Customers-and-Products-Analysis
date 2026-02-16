@@ -57,11 +57,13 @@ Revenue by Brand (2013-2014)
 
 **Order Count**<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Order counts follow revenue. Like revenue, orders fluctuates during the period with no major dips with the lowest total orders of 9.6M in 2014<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Total order dropped by 8% between 2013 to 2014 - While 2002, 2009, 2015 have approximately the same amount of total orders, the annual revenue is not the same which would indicated that order values were higher in 2002 than in the other years.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;- Total order dropped by 8% between 2013 to 2014<br />
+&nbsp;&nbsp;&nbsp;&nbsp;- While 2002, 2009, 2015 have approximately the same amount of total orders, the annual revenue is not the same which would indicated that order values were higher in 2002 than in the other years.<br />
 
 **Recommendation** <br />
 -&nbsp;&nbsp;&nbsp;&nbsp; Thoroughly investigate causes of 2014 decline (eg. competition, market changes, internal, other factors ) <br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Leverage high performing years to refine marketing and sale strategies - Reasses strategies for coming years focusing on promotions, pricing and customer engagements <br />
+&nbsp;&nbsp;&nbsp;&nbsp;- Leverage high performing years to refine marketing and sale strategies <br />
+&nbsp;&nbsp;&nbsp;&nbsp;- Reasses strategies for coming years focusing on promotions, pricing and customer engagements <br />
 
 Revenue by Country
 ![Alt text](revenue_by_country_01.png)
