@@ -21,7 +21,7 @@ Overall Revenue by Brand
 <br />
 Revenue by Brand Report
 <br />
-![Alt text](Revenue_by_brand_report.png)
+![Alt text](revenue_by_brand_report.png)
 <br />
 Revenue Performance Report
 <br />
