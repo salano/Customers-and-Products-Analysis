@@ -1,10 +1,10 @@
-In this section, we analyze product performance and customer behaviour to identify trends and patterns that will enable us to develop marketing and operations strategies in a contemporary business environment.
+In this section, we analyze brand performance and customer behaviour to identify trends and patterns that will enable us to develop marketing and operations strategies in a contemporary business environment.
 
 **Metrics**
 Revenue Trends - Orders revenue, number of orders, and Average order Value (AVO) <br />
 Product Performance - analyze product and brand lines <br />
 Customer behaviour - analyze customers across segments<br />
-Regional results - evaluate regional demand and product performance to identify areas for improvement<br />
+Regional results - evaluate regional demand and brands performance to identify areas for improvement<br />
 
 **Products Segments**
 Products were segmented as follows to assist with analysis:<br />
@@ -18,14 +18,14 @@ Year over Year Revenue
 <br />
 
 Year over Year order Brand Revenue
-![Alt text](order_count_YOY.png)
+![Alt text](revenue_by_year_brand.png)
 <br />
 
 Year over Year order counts
-![Alt text](revenue_by_year_brand.png)
-
-Overall Revenue by Brand
+![Alt text](order_count_YOY.png)
 <br />
+Overall Revenue by Brand
+
 ![Alt text](Revenue_by_brand.png)
 <br />
 
@@ -149,5 +149,9 @@ Customer churn prediction
 
 **Next steps**<br />
 
-- A shorter period for analysis should be considered with fewer products to conduct depper analysis over months.
-- Countries should be group by continent to strengthened regional analysis.
+Revenue Performance Report
+<br />
+![Alt text](Revenue_performance_report.png)
+<br />
+
+See 2016_2018 section for monthly and regional analysis

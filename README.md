@@ -152,7 +152,7 @@ Customer churn prediction
 
 **<b>Recommendations </b>**<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Finance and analytics teams should investigate the main drivers for low revenue in 2011 and 2014 - which brands, products, or region.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Marketing team should push more promotions and marketing strategies for mid and high performing products.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;- Marketing team should push more promotions and marketing strategies for mid and high performing brands.<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Marketing team should developed focused targeted promotions for slipping and lapsed customers to re-active them. <br />
 
 **Caveats and Assumptions**<br />
