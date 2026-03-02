@@ -7,34 +7,29 @@ Regional results - evaluate regional demand and brand performance to identify ar
 
 **Tools**
 Power BI and Dax
+<br />
 **<b>Summary </b>**
 <br />
 Year over Year Revenue
 ![Alt text](revenue_YOY.png)
 <br />
-
 Year over Year order counts
 ![Alt text](order_count_YOY.png)
 <br />
 Overall Revenue by Brand
-
 ![Alt text](revenue_by_year_brand.png)
 <br />
-
 Revenue by Brand Report
 <br />
 ![Alt text](Revenue_by_brand_report.png)
 <br />
-
 Revenue Performance Report
 <br />
 ![Alt text](Revenue_performance_report.png)
 <br />
-
 May 2017 Decline
 ![Alt text](May_2017_decline.png)
 <br />
-
 August 2018 Decline
 ![Alt text](August_2018_decline.png)
 <br />
@@ -46,19 +41,6 @@ August 2018 Decline
 &nbsp;&nbsp;&nbsp;&nbsp;- All regions revenue fluctuated during the assessment period, but Africa, Asia, and Europe all peaked simulataneously in Oct 2018. They also had a simultaneous decline in September 2017 indicating global/macro trends.<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- ChefChoice is our all-time best performing brand with revenue totalling $9.8M, but experienced a sharp decline from 2017 to 2018 overall.<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- ChefChoice declines occurs in the region of Africa, Europe, and Asia. Europe mainly between Nov 2017 and May 2018, Africa Aug 2017 and Jan 2018, and Asia Nov 2017 to May 2018. .<br />
-
-**Order Count**<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Order counts follow revenue. Like revenue, orders fluctuates during the period with no major dips with the lowest total orders of 9.6M in 2014<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Total order dropped by 8% between 2013 to 2014<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- While 2002, 2009, 2015 have approximately the same amount of total orders, the annual revenue is not the same which would indicated that order values were higher in 2002 than in the other years.<br />
-
-Revenue by Country
-![Alt text](revenue_by_country_01.png)
-![Alt text](revenue_by_country_02.png)
-
-**Product Segment and Country performance**<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Every country contributes less than 1% of revenue;however, Tonga and Turkey contibution is less than 0.3%<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- The low performing product segment revenue is less than half of the other two segments, but has the most customers purchases which would indicate most customers buy the cheaper products.<br />
 
 Dataset Structure and ERD (Entity Relation Diagram)
 ![Alt text](ERD.png)
