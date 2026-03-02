@@ -1,0 +1,75 @@
+//base values
+
+Gross Revenue = 
+SUMX ( orders_fact, orders_fact[Quantity] * orders_fact[UnitPrice] )
+
+Orders = 
+DISTINCTCOUNT ( orders_fact[OrderID] )
+
+Quanties = 
+SUM ( orders_fact[Quantity] )
+
+Items per Order = 
+DIVIDE ( [Quanties], [Orders] )
+
+AVerage Order Value (AVO) = DIVIDE([Gross Revenue], [Quanties])
+
+Items per Order = 
+DIVIDE ( [Quanties], [Orders] )
+
+Average Selling Price (ASP) = 
+DIVIDE ( [Gross Revenue], [Quanties] )
+
+//Current year figures (last year in dataset)
+Current Year AVO = CALCULATE([AVerage Order Value (AVO)], REMOVEFILTERS('DateTBL'),
+    DateTBL[Year] = MAX(DateTBL[Year]) )
+
+Current Year Orders = CALCULATE([Orders], REMOVEFILTERS('DateTBL'),
+    DateTBL[Year] = MAX(DateTBL[Year]) )	
+
+Current Year Revenue = CALCULATE([Gross Revenue], REMOVEFILTERS('DateTBL'),
+    DateTBL[Year] = MAX(DateTBL[Year]) )	
+	
+//Previous year figure (year prior to last in the dataset)
+AOV LY = 
+CALCULATE(
+    [AVerage Order Value (AVO)],
+    REMOVEFILTERS(DateTBL),
+    DateTBL[Year] = MAX(DateTBL[Year]) - 1
+)
+
+
+Orders LY = 
+CALCULATE(
+    [Orders],
+    REMOVEFILTERS(DateTBL),
+    DateTBL[Year] = MAX(DateTBL[Year]) - 1
+)
+
+Revenue LY = 
+CALCULATE(
+    [Gross Revenue],
+    REMOVEFILTERS(DateTBL),
+    DateTBL[Year] = MAX(DateTBL[Year]) - 1
+)
+
+//Month over Month change indicator
+MoM Change = 
+VAR Current_Month =[Gross Revenue]
+VAR Previous_Month = 
+    CALCULATE([Gross Revenue], DATEADD(DateTBL[Date], -1, MONTH))
+RETURN
+    SWITCH(
+        TRUE(),
+        ISBLANK(Previous_Month), UNICHAR(9610), // No Data/Neutral
+        Current_Month > Previous_Month, UNICHAR(9650), // Green Up
+        Current_Month < Previous_Month, UNICHAR(9660), // Red Down
+        UNICHAR(9610) // Default)
+        )
+	
+//YOY figures
+AOV YoY % = DIVIDE([Current Year AVO] - [AOV LY], [AOV LY])
+
+Orders YoY % = DIVIDE([Current Year Orders] - [Orders LY], [Orders LY])
+
+Revenue YoY % = DIVIDE([Current Year Revenue] - [Revenue LY], [Revenue LY])
