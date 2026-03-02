@@ -162,4 +162,8 @@ Customer churn prediction
 **Next steps**<br />
 
 - A shorter period for analysis should be considered with fewer products to conduct depper analysis over months.
-- Countries should be group by continent to strengthened regional analysis.
+  Revenue Performance Report
+  <br />
+  ![Alt text](Revenue_performance_report.png)
+
+See 2016_2018 section for monthly and regional analysis
