@@ -72,9 +72,9 @@ AOV by Region
 &nbsp;&nbsp;&nbsp;&nbsp;- Best performing brand is ChefChoice (385 Orders), worst performing is BrightLights (261 orders)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- October is our overall best performing month in the period. Maybe related to holiday promotions at that time - Thanksgiving , holloween, early-good Friday<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Chefchoice, HomeComfort, StyleCo (top 3 brands by orders) had a simultaneous dip in Sep 2017 in both orders and average order value<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Chefchoice, HomeComfort, StyleCo (top 3 brands by orders) had a simultaneous dip in November 2017, but contrasting rise in AVO in Nov 2017 - Likely due to purchasing of more expensive products over cheaper ones.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;- Chefchoice, HomeComfort, StyleCo (top 3 brands by orders) had a simultaneous dip in November 2017, but contrasting rise in AVO in Nov 2017 - Likely due to purchasing of more inexpensive products over premium ones.<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Oct 2017, saw a spike in Orders in Africa and Europe over the previous month<br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Oct 2017, we saw a rise of AOV in Oceania and South American over the previous month - indicating a sale of higher value products<br />
+&nbsp;&nbsp;&nbsp;&nbsp;- Oct 2017, we saw a rise of AOV in Oceania and South American over the previous month - indicating a sale of lower value products over premium ones<br />
 
 **<b>Recommendations </b>**<br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Finance and analytics teams should investigate the main drivers for low revenue in 6 and 2018 - which brands, products, or region.<br />

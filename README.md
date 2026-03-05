@@ -62,7 +62,7 @@ Revenue by Brand (2013-2014)
 **Recommendation** <br />
 -&nbsp;&nbsp;&nbsp;&nbsp; Thoroughly investigate causes of 2014 decline (eg. competition, market changes, internal, other factors ) <br />
 &nbsp;&nbsp;&nbsp;&nbsp;- Leverage high performing years to refine marketing and sale strategies <br />
-&nbsp;&nbsp;&nbsp;&nbsp;- Reasses strategies for coming years focusing on promotions, pricing and customer engagements <br />
+&nbsp;&nbsp;&nbsp;&nbsp;- Re-assess strategies for coming years focusing on promotions, pricing and customer engagements <br />
 
 Revenue by Country
 ![Alt text](revenue_by_country_01.png)
