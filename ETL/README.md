@@ -1,4 +1,4 @@
-In this section we implement the Extract Transform Load (ETL) need for the data we will use for the reporting and analysis sections.
+In this section we implement the Extract Load Transform (ELT) need for the data we will use for the reporting and analysis sections.
 
 This project was implemented on the free version of Databricks so it contains some workaround for serverless computing. Also, the dataset used has some shortcoming and some assumptions were made. These will be identified in the appropiate sections.
 
